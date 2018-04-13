@@ -74,7 +74,7 @@ export default class extends React.Component {
             transform: [{ translateY }],
             flexShrink: 1, marginLeft: 30, marginBottom: 200, overflow: 'hidden'
           }}
-         reszieMode={'contain'} source={require('./point.png')} />
+         reszieMode={'contain'} source={require('./images/point.png')} />
       </Animated.View>
     )
   }

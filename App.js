@@ -31,7 +31,7 @@ export default class App extends Component<Props> {
     const { isReady } = this.state
       return (
         <View style={styles.container}>
-          <Image source={require('./ola.jpg')} style={{ opacity: isReady ? 1 : 0,width, height }} />
+          <Image source={require('./images/ola.jpg')} style={{ opacity: isReady ? 1 : 0,width, height }} />
           <FirstView onComplete={this.onComplete} />
           {!!isReady && <SecondView />}
         </View>
