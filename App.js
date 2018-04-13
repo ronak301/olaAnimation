@@ -14,6 +14,7 @@ import {
   Image
 } from 'react-native'
 import FirstView from './FirstView'
+import SecondView from './SecondView'
 
 const { width, height } = Dimensions.get('window')
 
@@ -30,18 +31,25 @@ export default class App extends Component<Props> {
     const { isReady } = this.state
       return (
         <View style={styles.container}>
-          <Image source={require('./ola.jpg')} style={{ width, height }} />
-          <FirstView />
+          <Image source={require('./ola.jpg')} style={{ opacity: isReady ? 1 : 0,width, height }} />
+          <FirstView onComplete={this.onComplete} />
+          {!!isReady && <SecondView />}
         </View>
       );
+  }
+
+  onComplete = () => {
+    this.setState({
+      isReady: true
+    })
   }
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    // justifyContent: 'center',
+    // alignItems: 'center',
     backgroundColor: 'white',
   },
   welcome: {

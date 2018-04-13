@@ -38,27 +38,41 @@ export default class extends React.Component {
       toValue: 3,
       easing: Easing.elastic(0.04),
       useNativeDriver: true
-    }).start()
+    }).start(() => this.props.onComplete())
   }
 
 
   render() {
     const translateY = this.state.anim.interpolate({
-      inputRange: [0, 0.5, 1, 2, 2.95, 3],
+      inputRange: [0, 0.5, 1, 2, 2.75, 3],
       outputRange: [0, -40, 0, 0, -150, 70],
       extrapolate: 'clamp'
     })
     const opacity = this.state.anim.interpolate({
-      inputRange: [2, 2.999, 3],
+      inputRange: [2.8, 2.99, 3],
       outputRange: [1, 1, 0],
       extrapolate: 'clamp'
     })
     return (
-      <Animated.View style={{ opacity, alignItems: 'center', justifyContent: 'center', position: 'absolute', width, height, top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'white' }} >
+      <Animated.View 
+        style={{
+          opacity, 
+          alignItems: 'center', 
+          justifyContent: 'center', 
+          position: 'absolute', 
+          width, 
+          height, 
+          top: 0, 
+          left: 0, 
+          right: 0, 
+          bottom: 0, 
+          backgroundColor: 'white' 
+        }} >
         <Animated.Image
           style={{
+            opacity,
             transform: [{ translateY }],
-            flexShrink: 1, marginBottom: 200, overflow: 'hidden'
+            flexShrink: 1, marginLeft: 30, marginBottom: 200, overflow: 'hidden'
           }}
          reszieMode={'contain'} source={require('./point.png')} />
       </Animated.View>
