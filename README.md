@@ -8,7 +8,3 @@ Ola splash screen animation similar to reveal animation in android. Purely in JS
 
 ### Inspiration
 ola app
-
-# License
-
- - [MIT](https://github.com/ronak301/react-native-submit-button/blob/master/LICENSE.txt).  © Ronak Kothari
